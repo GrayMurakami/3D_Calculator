@@ -1,0 +1,105 @@
+body {
+    background-image: url("../assets/bk4.jpg");
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.calc {
+    margin: 50px auto;
+    width: 300px;
+    height: 500px;
+    border: 2px solid red;
+    background: black;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 18px;
+    color: aliceblue;
+    box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+.field {
+    height: 40px;
+    padding: 10px;
+    display: grid;
+    margin-top: 15px;
+    /* margin-bottom: px; */
+    font-size: 4rem;
+    justify-items: end;
+    align-items: end;
+}
+
+.buttons {
+    display: grid;
+    grid-template-areas: 
+    "clear del sqrt addition"
+    "seven eight nine subtraction"
+    "four five six multiply"
+    "one two three division"
+    "plus-minus zero point result";
+    grid-gap: 10px;
+    justify-items: center;
+    padding-top: 10px;
+}
+
+/* .btn.clear {
+    grid-area: clear;
+    width: 100%;
+    border-radius: 34px;
+} */
+
+.btn {
+    color: aliceblue;
+    width: 50px;
+    height: 50px;
+    background: rgba(128, 128, 128, 0.534);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px red;
+    cursor: pointer;
+    user-select: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    color: red;
+    box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.btn:active {
+    filter: brightness(200%);
+}
+
+.btn.bg-blue:active {
+    background: rgb(0, 234, 255);
+}
+
+.btn.bg-blue {
+    background: blue;
+    box-shadow: 1px 1px 1px rgb(0, 234, 255);
+}
+
+.btn.bg-blue:hover {
+    box-shadow: 0 0 10px 2px rgba(0, 234, 255, 0.8);
+}
+
+.btn.bg-orange {
+    background: orange;
+    box-shadow: 1px 1px 1px yellow;
+}
+
+.btn.bg-orange:hover {
+    box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.8);
+}
+
+.author {
+    text-align: right;
+    text-shadow: 1px 1px 1px red;
+    color: rgb(0, 234, 255);
+    font-size: 22px;
+    margin-top: 45px;
+}
