@@ -9,7 +9,7 @@
     </head>
     <body>
         
-        <div class="calc">
+        <div class="calc calc-move">
             <div class="calc-screen">
                 <p class="field">0</p>
             </div>
@@ -39,11 +39,39 @@
                 <button class="btn point bg-orange" type="button" value=".">.</button>
                 <button class="btn result bg-blue" type="button" value="=">=</button>
             </div>
-            <b><p class="author">GraY ©</p></b>
+            <b><p class="author">&copy; 2025 GraY</p></b>
         </div>
       
 
         <script type="module" src="./js/calculator_math.js"></script>
         <script type="module" src="./js/connection.js"></script>
+        <script>
+            const container = document.querySelector('.calc-move');
+
+            container.addEventListener('mousemove', (event) => {
+            const rect = container.getBoundingClientRect();
+
+            // Координаты мыши относительно контейнера
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            // Центр контейнера
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Вычисление углов (чем дальше от центра, тем больше угол)
+            const mouseX = ((x - centerX) / centerX) * 10; // Угол наклона по X (от -10 до 10 градусов)
+            const mouseY = ((centerY - y) / centerY) * 10; // Угол наклона по Y (от -10 до 10 градусов)
+
+            // Применяем углы через CSS-переменные
+            container.style.setProperty('--mouseX', `${mouseX}deg`);
+            container.style.setProperty('--mouseY', `${mouseY}deg`);
+            });
+
+            container.addEventListener('mouseleave', () => {
+            container.style.setProperty('--mouseX', '0deg');
+            container.style.setProperty('--mouseY', '0deg');
+            });
+        </script>
     </body>
 </html>
